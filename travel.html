@@ -4,43 +4,196 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dream Travel Agency</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #007BFF;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .destination {
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .destination img {
+            width: 100%;
+            max-height: 250px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .destination h3 {
+            margin-top: 10px;
+            color: #222;
+        }
+        .destination p {
+            font-size: 14px;
+            color: #555;
+        }
+        .destination a {
+            display: inline-block;
+            margin-top: 5px;
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .destination a:hover {
+            text-decoration: underline;
+        }
+        .services {
+            background-color: #eee;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .testimonial {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .testimonial p {
+            font-style: italic;
+        }
+        .faq {
+            margin-top: 20px;
+        }
+        .faq p {
+            font-weight: bold;
+        }
+        .contact {
+            text-align: center;
+            padding: 20px;
+            background: #007BFF;
+            color: white;
+        }
+        .contact a {
+            color: #FFD700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #0056b3;
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Dream Travel Agency</h1>
-    <p>Your gateway to amazing destinations around the world!</p>
+    <header>
+        <h1>Dream Travel Agency</h1>
+        <p>Your gateway to amazing destinations around the world!</p>
+    </header>
 
-    <h2>About Us</h2>
-    <p>We are a leading travel agency offering unforgettable experiences to the most beautiful places on Earth. From relaxing beach vacations to adventurous mountain treks, we have something for everyone.</p>
+    <div class="container">
+        <h2>About Us</h2>
+        <p>We specialize in creating memorable travel experiences for our customers. Whether you're looking for adventure, relaxation, or cultural immersion, we have the perfect package for you.</p>
 
-    <h2>Popular Destinations</h2>
+        <h2>Popular Destinations</h2>
 
-    <h3>🏖️ Maldives</h3>
-    <p>Experience white sandy beaches and crystal-clear waters.</p>
-    <a href="#">Learn more</a>
+        <div class="destination">
+            <img src="https://source.unsplash.com/800x400/?beach,maldives" alt="Maldives">
+            <h3>🏖️ Maldives</h3>
+            <p>Experience white sandy beaches and crystal-clear waters. Enjoy luxurious resorts, snorkeling, and sunset cruises.</p>
+            <a href="#">Learn more</a>
+        </div>
 
-    <h3>🏔️ Swiss Alps</h3>
-    <p>Perfect for skiing, hiking, and breathtaking mountain views.</p>
-    <a href="#">Learn more</a>
+        <div class="destination">
+            <img src="https://source.unsplash.com/800x400/?mountains,switzerland" alt="Swiss Alps">
+            <h3>🏔️ Swiss Alps</h3>
+            <p>Perfect for skiing, hiking, and breathtaking mountain views. Explore the beauty of nature and Swiss culture.</p>
+            <a href="#">Learn more</a>
+        </div>
 
-    <h3>🏙️ Paris, France</h3>
-    <p>Explore the City of Love with its iconic landmarks and exquisite cuisine.</p>
-    <a href="#">Learn more</a>
+        <div class="destination">
+            <img src="https://source.unsplash.com/800x400/?paris,eiffel" alt="Paris">
+            <h3>🏙️ Paris, France</h3>
+            <p>Explore the City of Love with its iconic landmarks, exquisite cuisine, and rich history.</p>
+            <a href="#">Learn more</a>
+        </div>
 
-    <h2>Our Services</h2>
-    <ul>
-        <li>Flight and hotel bookings</li>
-        <li>Custom tour packages</li>
-        <li>Travel insurance</li>
-        <li>Visa assistance</li>
-    </ul>
+        <div class="destination">
+            <img src="https://source.unsplash.com/800x400/?japan,kyoto" alt="Kyoto, Japan">
+            <h3>🌸 Kyoto, Japan</h3>
+            <p>Immerse yourself in traditional Japanese culture with ancient temples, cherry blossoms, and tea ceremonies.</p>
+            <a href="#">Learn more</a>
+        </div>
 
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:ahad6326@gmail.com">ahad6326@gmail.com</a></p>
-    <p>Phone: +7631744682</p>
-    <p>Follow us: <a href="#">Instagram</a> | <a href="#">Facebook</a></p>
+        <div class="destination">
+            <img src="https://source.unsplash.com/800x400/?newyork,city" alt="New York">
+            <h3>🌆 New York, USA</h3>
+            <p>Experience the hustle and bustle of the Big Apple with its skyscrapers, Broadway shows, and world-class shopping.</p>
+            <a href="#">Learn more</a>
+        </div>
 
-    <p>&copy; 2025 Dream Travel Agency. All rights reserved.</p>
+        <h2>Our Services</h2>
+        <div class="services">
+            <ul>
+                <li>✈️ Flight and hotel bookings</li>
+                <li>🗺️ Custom tour packages</li>
+                <li>📜 Travel insurance</li>
+                <li>🛂 Visa assistance</li>
+                <li>🚗 Car rentals & local transportation</li>
+                <li>🎟️ Exclusive event & attraction tickets</li>
+                <li>🍽️ Culinary experiences & food tours</li>
+                <li>🚢 Cruise vacations</li>
+            </ul>
+        </div>
+
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial">
+            <p>"Dream Travel Agency made my honeymoon in the Maldives an unforgettable experience. The planning was seamless!" - Sarah & John</p>
+        </div>
+        <div class="testimonial">
+            <p>"Our family trip to Japan was beyond amazing. The itinerary covered everything we wanted!" - Mark & Family</p>
+        </div>
+
+        <h2>FAQs</h2>
+        <div class="faq">
+            <p>Q: Do you offer customized travel packages?</p>
+            <p>A: Yes! We can create a personalized itinerary based on your preferences.</p>
+        </div>
+        <div class="faq">
+            <p>Q: Do you provide travel insurance?</p>
+            <p>A: Absolutely! We offer comprehensive travel insurance for a worry-free journey.</p>
+        </div>
+        <div class="faq">
+            <p>Q: Can I book last-minute trips?</p>
+            <p>A: Yes, we offer last-minute deals, subject to availability.</p>
+        </div>
+    </div>
+
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:ahad6326@gmail.com">ahad6326@gmail.com</a></p>
+        <p>Phone: +7631744682</p>
+        <p>Follow us on: <a href="#">Instagram</a> | <a href="#">Facebook</a></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Dream Travel Agency. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
