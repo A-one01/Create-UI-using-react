@@ -4,34 +4,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #444;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .news-item {
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .news-item img {
+            width: 100%;
+            max-height: 250px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .news-item h3 {
+            margin-top: 10px;
+            color: #222;
+        }
+        .news-item p {
+            font-size: 14px;
+            color: #555;
+        }
+        .news-item a {
+            display: inline-block;
+            margin-top: 5px;
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .news-item a:hover {
+            text-decoration: underline;
+        }
+        .category {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .contact {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+        .contact a {
+            color: #FFD700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #222;
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>News Website</h1>
-    <p>Your daily source for news</p>
+    <header>
+        <h1>Daily News</h1>
+        <p>Your daily source for the latest news</p>
+    </header>
 
-    <h2>Latest News</h2>
+    <div class="container">
+        <h2>Latest News</h2>
 
-    <h3>Breaking: Major Tech Advancements in 2025</h3>
-    <p>Published on: February 20, 2025</p>
-    <p>Tech companies are unveiling groundbreaking innovations this year, with AI and robotics taking center stage...</p>
-    <a href="#">Read more</a>
+        <div class="news-item">
+            <div class="category">Technology</div>
+            <img src="https://source.unsplash.com/800x400/?technology,ai" alt="Tech News">
+            <h3>Breaking: Major Tech Advancements in 2025</h3>
+            <p>Published on: February 20, 2025</p>
+            <p>Tech companies are unveiling groundbreaking innovations this year, with AI and robotics taking center stage...</p>
+            <a href="#">Read more</a>
+        </div>
 
-    <h3>Sports: Championship Final Results</h3>
-    <p>Published on: February 19, 2025</p>
-    <p>The highly anticipated championship match ended in a dramatic finish, leaving fans in awe...</p>
-    <a href="#">Read more</a>
+        <div class="news-item">
+            <div class="category">Sports</div>
+            <img src="https://source.unsplash.com/800x400/?sports,stadium" alt="Sports News">
+            <h3>Championship Final Results: A Stunning Victory</h3>
+            <p>Published on: February 19, 2025</p>
+            <p>The highly anticipated championship match ended in a dramatic finish, leaving fans in awe...</p>
+            <a href="#">Read more</a>
+        </div>
 
-    <h3>Health: 10 Tips for a Healthier Lifestyle</h3>
-    <p>Published on: February 18, 2025</p>
-    <p>Experts recommend simple lifestyle changes to improve overall health and well-being...</p>
-    <a href="#">Read more</a>
+        <div class="news-item">
+            <div class="category">Health</div>
+            <img src="https://source.unsplash.com/800x400/?health,fitness" alt="Health News">
+            <h3>10 Tips for a Healthier Lifestyle</h3>
+            <p>Published on: February 18, 2025</p>
+            <p>Experts recommend simple lifestyle changes to improve overall health and well-being...</p>
+            <a href="#">Read more</a>
+        </div>
 
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:ahad6326@gmail.com">ahad6326@gmail.com.com</a></p>
-    <p>Follow us on: <a href="#">Twitter</a> | <a href="#">Facebook</a></p>
+        <div class="news-item">
+            <div class="category">Business</div>
+            <img src="https://source.unsplash.com/800x400/?business,finance" alt="Business News">
+            <h3>Stock Market Sees Major Surge</h3>
+            <p>Published on: February 17, 2025</p>
+            <p>Stock markets around the world witnessed a huge jump as investors responded positively to economic reforms...</p>
+            <a href="#">Read more</a>
+        </div>
 
-    <p>&copy; 2025 News Website</p>
+        <div class="news-item">
+            <div class="category">Entertainment</div>
+            <img src="https://source.unsplash.com/800x400/?movie,hollywood" alt="Entertainment News">
+            <h3>Upcoming Blockbuster Movies of 2025</h3>
+            <p>Published on: February 16, 2025</p>
+            <p>Hollywood is set to release a series of highly anticipated movies that are expected to break box office records...</p>
+            <a href="#">Read more</a>
+        </div>
+
+        <div class="news-item">
+            <div class="category">Environment</div>
+            <img src="https://source.unsplash.com/800x400/?nature,climate" alt="Environment News">
+            <h3>Climate Change: How We Can Make a Difference</h3>
+            <p>Published on: February 15, 2025</p>
+            <p>Experts discuss the latest findings on climate change and what individuals can do to help protect the planet...</p>
+            <a href="#">Read more</a>
+        </div>
+
+        <div class="news-item">
+            <div class="category">Travel</div>
+            <img src="https://source.unsplash.com/800x400/?travel,beach" alt="Travel News">
+            <h3>Top 10 Travel Destinations for 2025</h3>
+            <p>Published on: February 14, 2025</p>
+            <p>Looking for the perfect vacation? Check out these top travel destinations for 2025, from beaches to mountains...</p>
+            <a href="#">Read more</a>
+        </div>
+    </div>
+
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:ahad6326@gmail.com">ahad6326@gmail.com</a></p>
+        <p>Follow us on: <a href="#">Twitter</a> | <a href="#">Facebook</a></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Daily News. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
