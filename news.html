@@ -60,14 +60,6 @@
         .news-item a:hover {
             text-decoration: underline;
         }
-        .category {
-            background-color: #eee;
-            padding: 10px;
-            border-radius: 5px;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
         .contact {
             text-align: center;
             padding: 20px;
@@ -87,7 +79,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="checkRegistration()">
 
     <header>
         <h1>Daily News</h1>
@@ -98,65 +90,26 @@
         <h2>Latest News</h2>
 
         <div class="news-item">
-            <div class="category">Technology</div>
             <img src="https://source.unsplash.com/800x400/?technology,ai" alt="Tech News">
             <h3>Breaking: Major Tech Advancements in 2025</h3>
             <p>Published on: February 20, 2025</p>
-            <p>Tech companies are unveiling groundbreaking innovations this year, with AI and robotics taking center stage...</p>
+            <p>Tech companies are unveiling groundbreaking innovations this year...</p>
             <a href="#">Read more</a>
         </div>
 
         <div class="news-item">
-            <div class="category">Sports</div>
             <img src="https://source.unsplash.com/800x400/?sports,stadium" alt="Sports News">
             <h3>Championship Final Results: A Stunning Victory</h3>
             <p>Published on: February 19, 2025</p>
-            <p>The highly anticipated championship match ended in a dramatic finish, leaving fans in awe...</p>
+            <p>The championship match ended in a dramatic finish...</p>
             <a href="#">Read more</a>
         </div>
 
         <div class="news-item">
-            <div class="category">Health</div>
             <img src="https://source.unsplash.com/800x400/?health,fitness" alt="Health News">
             <h3>10 Tips for a Healthier Lifestyle</h3>
             <p>Published on: February 18, 2025</p>
-            <p>Experts recommend simple lifestyle changes to improve overall health and well-being...</p>
-            <a href="#">Read more</a>
-        </div>
-
-        <div class="news-item">
-            <div class="category">Business</div>
-            <img src="https://source.unsplash.com/800x400/?business,finance" alt="Business News">
-            <h3>Stock Market Sees Major Surge</h3>
-            <p>Published on: February 17, 2025</p>
-            <p>Stock markets around the world witnessed a huge jump as investors responded positively to economic reforms...</p>
-            <a href="#">Read more</a>
-        </div>
-
-        <div class="news-item">
-            <div class="category">Entertainment</div>
-            <img src="https://source.unsplash.com/800x400/?movie,hollywood" alt="Entertainment News">
-            <h3>Upcoming Blockbuster Movies of 2025</h3>
-            <p>Published on: February 16, 2025</p>
-            <p>Hollywood is set to release a series of highly anticipated movies that are expected to break box office records...</p>
-            <a href="#">Read more</a>
-        </div>
-
-        <div class="news-item">
-            <div class="category">Environment</div>
-            <img src="https://source.unsplash.com/800x400/?nature,climate" alt="Environment News">
-            <h3>Climate Change: How We Can Make a Difference</h3>
-            <p>Published on: February 15, 2025</p>
-            <p>Experts discuss the latest findings on climate change and what individuals can do to help protect the planet...</p>
-            <a href="#">Read more</a>
-        </div>
-
-        <div class="news-item">
-            <div class="category">Travel</div>
-            <img src="https://source.unsplash.com/800x400/?travel,beach" alt="Travel News">
-            <h3>Top 10 Travel Destinations for 2025</h3>
-            <p>Published on: February 14, 2025</p>
-            <p>Looking for the perfect vacation? Check out these top travel destinations for 2025, from beaches to mountains...</p>
+            <p>Experts recommend lifestyle changes to improve health...</p>
             <a href="#">Read more</a>
         </div>
     </div>
@@ -170,6 +123,16 @@
     <footer>
         <p>&copy; 2025 Daily News. All rights reserved.</p>
     </footer>
+
+    <script>
+        function checkRegistration() {
+            let user = localStorage.getItem("registeredUser");
+            if (!user) {
+                alert("Please register first.");
+                window.location.href = "register.html";
+            }
+        }
+    </script>
 
 </body>
 </html>
