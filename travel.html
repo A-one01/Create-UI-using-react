@@ -17,6 +17,10 @@
             color: white;
             text-align: center;
             padding: 20px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        header:hover {
+            background-color: #0056b3;
         }
         .container {
             width: 80%;
@@ -25,22 +29,43 @@
             background: white;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         h2 {
             color: #007BFF;
             border-bottom: 2px solid #ddd;
             padding-bottom: 5px;
+            transition: color 0.3s ease-in-out;
+        }
+        h2:hover {
+            color: #0056b3;
         }
         .destination {
             margin-bottom: 30px;
             padding-bottom: 15px;
             border-bottom: 1px solid #ddd;
+            transition: transform 0.3s ease-in-out;
+        }
+        .destination:hover {
+            transform: scale(1.02);
         }
         .destination img {
             width: 100%;
             max-height: 250px;
             border-radius: 10px;
             object-fit: cover;
+            transition: transform 0.4s ease-in-out;
+        }
+        .destination img:hover {
+            transform: scale(1.05);
         }
         .destination h3 {
             margin-top: 10px;
@@ -53,49 +78,36 @@
         .destination a {
             display: inline-block;
             margin-top: 5px;
-            color: #007BFF;
+            color: white;
+            background-color: #007BFF;
+            padding: 8px 15px;
+            border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
         }
         .destination a:hover {
-            text-decoration: underline;
-        }
-        .services {
-            background-color: #eee;
-            padding: 15px;
-            border-radius: 5px;
-        }
-        .testimonial {
-            background-color: #fff3cd;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-        .testimonial p {
-            font-style: italic;
-        }
-        .faq {
-            margin-top: 20px;
-        }
-        .faq p {
-            font-weight: bold;
+            background-color: #0056b3;
         }
         .contact {
             text-align: center;
             padding: 20px;
             background: #007BFF;
             color: white;
+            transition: background-color 0.3s ease-in-out;
         }
-        .contact a {
-            color: #FFD700;
-            text-decoration: none;
-            font-weight: bold;
+        .contact:hover {
+            background-color: #0056b3;
         }
         footer {
             text-align: center;
             padding: 10px;
             background-color: #0056b3;
             color: white;
+            transition: background-color 0.3s ease-in-out;
+        }
+        footer:hover {
+            background-color: #004494;
         }
     </style>
 </head>
@@ -107,81 +119,64 @@
     </header>
 
     <div class="container">
-        <h2>About Us</h2>
-        <p>We specialize in creating memorable travel experiences for our customers. Whether you're looking for adventure, relaxation, or cultural immersion, we have the perfect package for you.</p>
+        <h2>Filter Destinations</h2>
+        <select id="destinationFilter">
+            <option value="all">All</option>
+            <option value="beach">Beaches</option>
+            <option value="mountain">Mountains</option>
+            <option value="city">City</option>
+        </select>
 
         <h2>Popular Destinations</h2>
 
-        <div class="destination">
-            <img src="https://source.unsplash.com/800x400/?beach,maldives" alt="Maldives">
+        <div class="destination" data-type="beach">
+            <img src="/images/maldives.jpeg" alt="Maldives">
             <h3>🏖️ Maldives</h3>
             <p>Experience white sandy beaches and crystal-clear waters. Enjoy luxurious resorts, snorkeling, and sunset cruises.</p>
             <a href="#">Learn more</a>
         </div>
 
-        <div class="destination">
-            <img src="https://source.unsplash.com/800x400/?mountains,switzerland" alt="Swiss Alps">
+        <div class="destination" data-type="mountain">
+            <img src="/images/swiss alps.jpeg" alt="Swiss Alps">
             <h3>🏔️ Swiss Alps</h3>
             <p>Perfect for skiing, hiking, and breathtaking mountain views. Explore the beauty of nature and Swiss culture.</p>
             <a href="#">Learn more</a>
         </div>
 
-        <div class="destination">
-            <img src="https://source.unsplash.com/800x400/?paris,eiffel" alt="Paris">
+        <div class="destination" data-type="city">
+            <img src="/images/paris.jpeg" alt="Paris">
             <h3>🏙️ Paris, France</h3>
             <p>Explore the City of Love with its iconic landmarks, exquisite cuisine, and rich history.</p>
             <a href="#">Learn more</a>
         </div>
 
-        <div class="destination">
-            <img src="https://source.unsplash.com/800x400/?japan,kyoto" alt="Kyoto, Japan">
-            <h3>🌸 Kyoto, Japan</h3>
-            <p>Immerse yourself in traditional Japanese culture with ancient temples, cherry blossoms, and tea ceremonies.</p>
+        <div class="destination" data-type="beach">
+            <img src="/images/bali.jpg" alt="Bali">
+            <h3>🏝️ Bali, Indonesia</h3>
+            <p>Enjoy lush forests, volcanic mountains, and stunning beaches. Perfect for adventure and relaxation.</p>
             <a href="#">Learn more</a>
         </div>
 
-        <div class="destination">
-            <img src="https://source.unsplash.com/800x400/?newyork,city" alt="New York">
-            <h3>🌆 New York, USA</h3>
-            <p>Experience the hustle and bustle of the Big Apple with its skyscrapers, Broadway shows, and world-class shopping.</p>
-            <a href="#">Learn more</a>
-        </div>
+        <h2>Register for Your Dream Trip</h2>
+        <form id="registerForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <br>
+            <label for="destination">Preferred Destination:</label>
+            <select id="destination">
+                <option value="maldives">Maldives</option>
+                <option value="swiss_alps">Swiss Alps</option>
+                <option value="paris">Paris</option>
+                <option value="bali">Bali</option>
+            </select>
+            <br>
+            <button type="submit">Register</button>
+        </form>
 
-        <h2>Our Services</h2>
-        <div class="services">
-            <ul>
-                <li>✈️ Flight and hotel bookings</li>
-                <li>🗺️ Custom tour packages</li>
-                <li>📜 Travel insurance</li>
-                <li>🛂 Visa assistance</li>
-                <li>🚗 Car rentals & local transportation</li>
-                <li>🎟️ Exclusive event & attraction tickets</li>
-                <li>🍽️ Culinary experiences & food tours</li>
-                <li>🚢 Cruise vacations</li>
-            </ul>
-        </div>
-
-        <h2>What Our Customers Say</h2>
-        <div class="testimonial">
-            <p>"Dream Travel Agency made my honeymoon in the Maldives an unforgettable experience. The planning was seamless!" - Sarah & John</p>
-        </div>
-        <div class="testimonial">
-            <p>"Our family trip to Japan was beyond amazing. The itinerary covered everything we wanted!" - Mark & Family</p>
-        </div>
-
-        <h2>FAQs</h2>
-        <div class="faq">
-            <p>Q: Do you offer customized travel packages?</p>
-            <p>A: Yes! We can create a personalized itinerary based on your preferences.</p>
-        </div>
-        <div class="faq">
-            <p>Q: Do you provide travel insurance?</p>
-            <p>A: Absolutely! We offer comprehensive travel insurance for a worry-free journey.</p>
-        </div>
-        <div class="faq">
-            <p>Q: Can I book last-minute trips?</p>
-            <p>A: Yes, we offer last-minute deals, subject to availability.</p>
-        </div>
+        <p id="registrationMessage" style="color: green; display: none;">Registration Successful!</p>
     </div>
 
     <div class="contact">
@@ -194,6 +189,30 @@
     <footer>
         <p>&copy; 2025 Dream Travel Agency. All rights reserved.</p>
     </footer>
+
+    <script>
+        function filterDestinations() {
+            let filterValue = document.getElementById("destinationFilter").value.toLowerCase();
+            let destinations = document.querySelectorAll(".destination");
+
+            destinations.forEach(destination => {
+                let destinationType = destination.getAttribute("data-type").toLowerCase();
+                
+                if (filterValue === "all" || destinationType.includes(filterValue)) {
+                    destination.style.display = "block";
+                } else {
+                    destination.style.display = "none";
+                }
+            });
+        }
+
+        document.getElementById("destinationFilter").addEventListener("change", filterDestinations);
+
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("registrationMessage").style.display = "block";
+        });
+    </script>
 
 </body>
 </html>
