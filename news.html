@@ -35,12 +35,19 @@
             margin-bottom: 30px;
             padding-bottom: 15px;
             border-bottom: 1px solid #ddd;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
         }
         .news-item img {
             width: 100%;
             max-height: 250px;
             border-radius: 10px;
             object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+        .news-item img:hover {
+            transform: scale(1.05);
         }
         .news-item h3 {
             margin-top: 10px;
@@ -56,9 +63,36 @@
             color: #007BFF;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s ease-in-out;
         }
         .news-item a:hover {
+            color: #0056b3;
             text-decoration: underline;
+        }
+        .filter {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
+        }
+        #loadMore {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+        #loadMore:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
         }
         .contact {
             text-align: center;
@@ -89,29 +123,25 @@
     <div class="container">
         <h2>Latest News</h2>
 
-        <div class="news-item">
-            <img src="https://source.unsplash.com/800x400/?technology,ai" alt="Tech News">
-            <h3>Breaking: Major Tech Advancements in 2025</h3>
-            <p>Published on: February 20, 2025</p>
-            <p>Tech companies are unveiling groundbreaking innovations this year...</p>
-            <a href="#">Read more</a>
+        <div class="filter">
+            <label for="newsCategory">Choose Category:</label>
+            <select id="newsCategory" onchange="filterNews()">
+                <option value="all">All</option>
+                <option value="technology">Technology</option>
+                <option value="sports">Sports</option>
+                <option value="health">Health</option>
+                <option value="business">Business</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="environment">Environment</option>
+                <option value="travel">Travel</option>
+            </select>
         </div>
 
-        <div class="news-item">
-            <img src="https://source.unsplash.com/800x400/?sports,stadium" alt="Sports News">
-            <h3>Championship Final Results: A Stunning Victory</h3>
-            <p>Published on: February 19, 2025</p>
-            <p>The championship match ended in a dramatic finish...</p>
-            <a href="#">Read more</a>
+        <div id="newsContainer">
+            <!-- News items will be dynamically inserted here -->
         </div>
 
-        <div class="news-item">
-            <img src="https://source.unsplash.com/800x400/?health,fitness" alt="Health News">
-            <h3>10 Tips for a Healthier Lifestyle</h3>
-            <p>Published on: February 18, 2025</p>
-            <p>Experts recommend lifestyle changes to improve health...</p>
-            <a href="#">Read more</a>
-        </div>
+        <button id="loadMore" onclick="loadMoreNews()">Load More</button>
     </div>
 
     <div class="contact">
@@ -125,6 +155,53 @@
     </footer>
 
     <script>
+        const newsData = [
+            { category: "technology", title: "AI Revolutionizing the Tech World", date: "February 20, 2025", image: "https://source.unsplash.com/800x400/?technology,ai" },
+            { category: "sports", title: "Championship Final Results", date: "February 19, 2025", image: "https://source.unsplash.com/800x400/?sports,stadium" },
+            { category: "health", title: "10 Tips for a Healthier Lifestyle", date: "February 18, 2025", image: "https://source.unsplash.com/800x400/?health,fitness" },
+            { category: "business", title: "Stock Market Sees Major Surge", date: "February 17, 2025", image: "https://source.unsplash.com/800x400/?business,finance" },
+            { category: "entertainment", title: "Upcoming Blockbuster Movies", date: "February 16, 2025", image: "https://source.unsplash.com/800x400/?movie,hollywood" },
+            { category: "environment", title: "How We Can Fight Climate Change", date: "February 15, 2025", image: "https://source.unsplash.com/800x400/?nature,climate" },
+            { category: "travel", title: "Top Travel Destinations for 2025", date: "February 14, 2025", image: "https://source.unsplash.com/800x400/?travel,beach" }
+        ];
+
+        let displayedNews = 3;
+
+        function loadNews(category = "all") {
+            const newsContainer = document.getElementById("newsContainer");
+            newsContainer.innerHTML = "";
+            let filteredNews = newsData.filter(news => category === "all" || news.category === category);
+            filteredNews.slice(0, displayedNews).forEach((news, index) => {
+                setTimeout(() => {
+                    const newsItem = document.createElement("div");
+                    newsItem.classList.add("news-item");
+                    newsItem.innerHTML = `
+                        <img src="${news.image}" alt="${news.title}">
+                        <h3>${news.title}</h3>
+                        <p>Published on: ${news.date}</p>
+                        <p>${news.title} - Read full details by clicking below.</p>
+                        <a href="#">Read more</a>
+                    `;
+                    newsContainer.appendChild(newsItem);
+                    setTimeout(() => {
+                        newsItem.style.opacity = "1";
+                        newsItem.style.transform = "translateY(0)";
+                    }, 100);
+                }, index * 200);
+            });
+        }
+
+        function filterNews() {
+            const selectedCategory = document.getElementById("newsCategory").value;
+            displayedNews = 3;
+            loadNews(selectedCategory);
+        }
+
+        function loadMoreNews() {
+            displayedNews += 3;
+            filterNews();
+        }
+
         function checkRegistration() {
             let user = localStorage.getItem("registeredUser");
             if (!user) {
@@ -132,6 +209,8 @@
                 window.location.href = "register.html";
             }
         }
+
+        window.onload = () => loadNews();
     </script>
 
 </body>
